@@ -12,7 +12,7 @@ SERVICE_TYPE = "_disasternet._tcp.local."
 
 
 def get_local_ip():
-    """Get this computer's local network IP address."""
+
 
     sock = socket.socket(
         socket.AF_INET,
@@ -28,7 +28,7 @@ def get_local_ip():
 
 
 def advertise_service(node_id, port):
-    """Advertise this DisasterNet node using mDNS."""
+   
 
     zeroconf = Zeroconf()
 
@@ -66,13 +66,12 @@ def advertise_service(node_id, port):
 
 
 class PeerListener(ServiceListener):
-    """Listen for other DisasterNet nodes."""
+   
 
     def __init__(self, own_node_id):
 
         self.own_node_id = own_node_id
 
-        # Store discovered peers
         self.peers = {}
 
     def add_service(
@@ -83,7 +82,7 @@ class PeerListener(ServiceListener):
     ):
         """Called when a new peer is discovered."""
 
-        # Ignore our own node
+       
         if name == f"{self.own_node_id}.{SERVICE_TYPE}":
             return
 
@@ -107,7 +106,7 @@ class PeerListener(ServiceListener):
             b"unknown"
         ).decode("utf-8")
 
-        # Store peer information
+      
         self.peers[node_id] = {
             "ip": ip,
             "port": info.port,
@@ -125,9 +124,7 @@ class PeerListener(ServiceListener):
         service_type,
         name
     ):
-        """Called when a peer leaves the network."""
 
-        # Find peer by service name
         node_to_remove = None
 
         for node_id, peer in self.peers.items():
@@ -154,7 +151,7 @@ class PeerListener(ServiceListener):
         service_type,
         name
     ):
-        """Called when peer information changes."""
+       
 
         self.add_service(
             zeroconf,
@@ -164,7 +161,7 @@ class PeerListener(ServiceListener):
 
 
 def discover_peers(own_node_id):
-    """Start discovering other DisasterNet nodes."""
+
 
     zeroconf = Zeroconf()
 
