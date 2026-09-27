@@ -1,10 +1,10 @@
 # DisasterNet Python
 
-A Python-based local-network emergency communication prototype inspired by DisasterNet.
+A Python-based local-network emergency communication prototype.
 
 DisasterNet Python allows multiple nodes connected to the same local network to automatically discover each other and exchange messages directly using TCP.
 
-## 🚀 Features
+# Features
 
 - Unique Node IDs
 - Automatic peer discovery using mDNS
@@ -18,9 +18,9 @@ DisasterNet Python allows multiple nodes connected to the same local network to 
 - Command-line interface
 - Unit testing using Pytest
 
-## 🏗️ Architecture
+##  Architecture
 
-```text
+text
                  DisasterNet Python
                          │
                          ▼
@@ -38,21 +38,21 @@ DisasterNet Python allows multiple nodes connected to the same local network to 
               │                     │
               ▼                     ▼
        Peer Discovery          Message Exchange
-```
 
-### Peer Discovery
+
+#Peer Discovery
 
 Each DisasterNet node advertises itself on the local network using mDNS/Zeroconf.
 
 The service type used by the project is:
 
-```text
+text
 _disasternet._tcp.local.
-```
+
 
 Other DisasterNet nodes listen for this service and automatically discover available peers.
 
-### Communication
+# Communication
 
 After discovering a peer, nodes communicate directly using TCP sockets.
 
@@ -60,7 +60,7 @@ Messages are exchanged using JSON.
 
 Example message:
 
-```json
+json
 {
   "type": "chat",
   "message_id": "msg-e313229c",
@@ -69,9 +69,9 @@ Example message:
   "message": "Hello Rahul",
   "timestamp": "2026-09-27T10:30:00"
 }
-```
 
-## 🛠️ Technologies Used
+
+# Technologies Used
 
 | Technology | Purpose |
 |------------|---------|
@@ -82,7 +82,7 @@ Example message:
 | Pytest | Unit testing |
 | JSON | Message serialization |
 
-## 📁 Project Structure
+# Project Structure
 
 ```text
 DisasterNet-Python/
@@ -158,7 +158,7 @@ Contains unit tests for node creation and node lifecycle behavior.
 - Python 3.10 or higher
 - Devices connected to the same local network
 
-## 📥 Installation
+# Installation
 
 Clone the repository:
 
@@ -174,7 +174,7 @@ cd DisasterNet-Python
 
 Create a virtual environment:
 
-### Windows
+# Windows
 
 ```powershell
 python -m venv venv
@@ -192,31 +192,31 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-## ▶️ Running the Application
+# Running the Application
 
-### Start Node 1
+#Start Node 1
 
 Open a terminal:
 
-```powershell
+powershell
 python -m app.main Kiran --port 9000
-```
 
-### Start Node 2
+
+# Start Node 2
 
 Open another terminal:
 
-```powershell
+powershell
 python -m app.main Rahul --port 9001
-```
+
 
 Both nodes should be connected to the same local network.
 
 The nodes will automatically discover each other.
 
-## 💬 Available Commands
+# Available Commands
 
-### View discovered peers
+#View discovered peers
 
 ```text
 /peers
