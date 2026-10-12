@@ -352,7 +352,7 @@ The current implementation does **not** include:
 - Graphical user interface
 - Internet-based communication
 
-## 🔮 Future Improvements
+# Future Improvements
 
 Possible future improvements include:
 
@@ -367,12 +367,12 @@ Possible future improvements include:
 - File sharing
 - Mobile support
 
-## 📌 Project Status
+#Project Status
 
-**Working Prototype**
+
 
 The current implementation successfully supports local-network peer discovery and direct TCP messaging between DisasterNet Python nodes.
 
-## 📄 License
+# License
 
 This project is currently provided for educational and development purposes.
